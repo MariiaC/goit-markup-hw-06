@@ -25,16 +25,18 @@
           >
           <ul class="site-nav list">
             <li class="site-nav-item">
-              <a href="./index.html" class="site-nav-link link">Студия</a>
+               <div class="current-page">
+             <a href="./index.html" class="site-nav-link link current-link">Студия</a>
+            </div>  
             </li>
             <li class="site-nav-item">
               <a href="./portfolio.html" class="site-nav-link link"
-                >Портфолио</a
-              >
+                >Портфолио</a>
             </li>
             <li class="site-nav-item">
               <a href="" class="site-nav-link link">Контакты</a>
             </li>
+            
           </ul>
         </nav>
         <ul class="contact-nav list">
@@ -364,7 +366,7 @@
       <!-- Постоянные клиенты секция5-->
       <section>
          <div class="container">
-        <h2 class="constant-clients">Постоянные клиенты</h3>
+        <h2 class="constant-clients">Постоянные клиенты</h2>
         <ul class="client-galery list">
           <li class="client-list">
             <a href="" class="client-icon">
@@ -488,13 +490,33 @@
             </li>
           </ul>
         </div>
-      </div>
-      </div>
-    </footer>
-<!--Modal window-->
+        <!--FOOTER Форма ДЗ 6-->
+<form class="footer-form container">
+  <div class="footer-field container">
+  <h3 class="sign-in">подпишитесь на рассылку</h3>
+  <label for="email"></label>
+  <input class="footer-input" type="email" name="email" id="email" placeholder="E-mail">
+  </div>
+  <button type="submit" class="footer-button">Подписаться
+  <svg class="icon-send">
+  <use href="./images/icons.svg#icon-send">
+  </use>
+  </svg>
+  </button>
+</form>
 
+      </div>
+      
+      </div>
+
+    </footer>
+
+
+<!--Modal form window-->
+
+<!--hw5-->
 <div data-modal class="backdrop is-hidden"  >
-  <div class="modal ">
+  <div class="form ">
 <button data-modal-close type="button" class=" button-close">
   <svg class="icon-close-button">
   <use href="./images/icons.svg#icon-close-button">
@@ -502,9 +524,87 @@
   button close
  </svg>
 </button>
+
+<!--hw 6-->
+<form class="js-speaker-form">
+  
+<h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
+<label class="input-group">
+  <span class="name-field">Имя</span>
+  <input class="input-field" type="name" name="name">
+  <svg class="icon">
+  <use href="./images/icons.svg#icon-person">
+  </use>
+  icon person
+ </svg>
+</label>
+<label class="input-group">
+  <span class="name-field">Телефон</span>
+  <input class="input-field" type="phone" name="phone">
+  <svg class="icon">
+  <use href="./images/icons.svg#icon-phone">
+  </use>
+  icon phone
+ </svg>
+</label>
+<label class="input-group">
+  <span class="name-field">Почта</span>
+  <input class="input-field" type="email" name="email">
+  <svg class="icon">
+  <use href="./images/icons.svg#icon-email">
+  </use>
+  icon email
+ </svg>
+</label>
+<label class="input-group">
+  <span class="name-field">Комментарий</span>
+  <textarea class="input-field textarea-field" cols="30" rows="10" placeholder="Введите текст"></textarea>
+</label>
+
+<!--checkbox-->
+  <label class="checkbox-label">
+  <input class="checkbox" type="checkbox" name="checkbox">
+  <svg class="icon-check">
+  <use href="./images/icons.svg#icon-check">
+  </use> icon check 
+</svg>
+  <span class="checkbox-field"> Соглашаюсь с рассылкой и принимаю 
+    <a class="conditions" href="">Условия договора</a> 
+  </span>
+</label>
+
+<button type="submit" class="submit-button">Отправить</button>
+
+
+</form>
   </div>
+
 </div>
-<!--добавляем скрипт из ДЗ для модалки-->
+
+
+
+
+
+<!--добавляем скрипт из ДЗ 5 для модалки-->
   <script src="./js/modal.js"></script>
+
+<!--добавляем скрипт из ДЗ 6 для модалки-->
+<script>
+(() => {
+  document
+  .querySelector('.js-speaker-form')
+  .addEventListener('submit', e => {
+    e.preventDefault();
+
+    new FormData(e.currentTarget).forEach((value, name) =>
+      console.log(`${name}: ${value}`),
+    );
+
+  e.currentTarget.reset();
+
+  });
+})();
+</script>
+
   </body>
 </html>

@@ -28,9 +28,10 @@
               <a href="./index.html" class="site-nav-link link">Студия</a>
             </li>
             <li class="site-nav-item">
-              <a href="./portfolio.html" class="site-nav-link link"
-                >Портфолио</a
-              >
+              <div class="current-page">
+              <a href="./portfolio.html" class="site-nav-link link current-link"
+                >Портфолио</a>
+              </div>
             </li>
             <li class="site-nav-item">
               <a href="" class="site-nav-link link">Контакты</a>
@@ -296,7 +297,7 @@
         </div>
       </section>
     </main>
-     <!--Footer-->
+<!--Footer-->
     <footer class="footer">
       <div class="container footer-container">
         <div class="address-container">
@@ -365,8 +366,25 @@
             </li>
           </ul>
         </div>
+        <!--FOOTER Форма ДЗ 6-->
+<form class="footer-form container">
+  <div class="footer-field container">
+  <h3 class="sign-in">подпишитесь на рассылку</h3>
+  <label for="email"></label>
+  <input class="footer-input" type="email" name="email" id="email" placeholder="E-mail">
+  </div>
+  <button type="submit" class="footer-button">Подписаться
+  <svg class="icon-send">
+  <use href="./images/icons.svg#icon-send">
+  </use>
+  </svg>
+  </button>
+</form>
+
       </div>
+      
       </div>
+
     </footer>
   </body>
 </html>

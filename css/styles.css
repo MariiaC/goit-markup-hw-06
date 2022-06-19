@@ -126,7 +126,7 @@ body {
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0.02em;  
-
+/*Переход*/
     transition: color 250ms var(--timng-function);
 }
 
@@ -135,26 +135,25 @@ body {
     color: var(--accent-color);
 }
 
+/*Подчеркивание*/
 
-/*добавляем переход и подчеркивание
-.site-nav-link::after{
+
+.current-page{
+    display: block;
+    position: relative;
+    }
+
+.current-link::after {
     content: '';
     display: block;
     position: absolute;
-    width: 100%;
+    width:100%;
     height: 4px;
     background-color: var(--accent-color);
     border-radius: 2px;
     left: 0;
-    bottom: -30px;
-    opacity: 0;
-    transition: opacity 250ms var(--timng-function);
-  }
-
-.site-nav-link:hover::after,
-.site-nav-link:focus::after{
-    opacity: 1;
-}*/
+    bottom: -31px;
+}
 
 /* список контактов header*/
 .contact-nav {
@@ -973,6 +972,85 @@ body {
     fill: var(--primary-background-color);
 }
 
+/*FOOTER Форма ДЗ 6*/
+.footer-form {
+    display: inline-flex;
+    width: 570px;
+    height: 86px;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+    margin: 72px 215px 94px 93px;
+}
+
+.footer-field{
+    display: flex;
+    flex-wrap: wrap;
+    width: 570px;
+    height: 86px;
+}
+
+.sign-in{
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    line-height: 1.14;
+    color: var(--primary-background-color);
+    margin-bottom: 20px;
+    }
+
+.footer-input{
+    width: 358px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: var(--footer-color);
+
+    transition: border-color 250ms var(--timng-function);
+}
+
+.footer-input:hover,
+.footer-input:focus{
+    border-color: var(--primary-background-color);
+}
+
+   .icon-send {
+   fill: var(--primary-background-color);
+   width: 24px;
+   height: 24px;
+   margin-left: 10px;
+   }
+
+   .footer-button {
+    background-color: var(--accent-color);
+    color: var(--secondary-background-color);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding-left: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    transition: background-color 250ms var(--timng-function);
+    }
+    
+   .footer-button:hover,
+   .footer-button:focus {
+       background-color: #188CE8;
+       cursor: pointer;
+   }
+
 /*Modal window*/
 
 .backdrop{
@@ -995,13 +1073,15 @@ body {
 transform: translate(-50%, -50%) scale(0.9);
 }
 
-    .modal{
+.form{
     position: absolute;
     top: 50%;
     left: 50%;
     width: 528px;
     height: 581px;
     background-color: var(--primary-background-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
     transform: translate(-50%, -50%) scale(1);
     transition: transform 250ms var(--timng-function);
     }
@@ -1024,5 +1104,160 @@ right: 8px;
 width: 18px;
 height: 18px;
 fill: var(--primary-text-color);
+cursor: pointer;
+
+transition: fill 250ms var(--timng-function);
 }
 
+.icon-close-button:hover,
+.icon-close-button:focus{
+    fill: var(--accent-color);
+}
+
+/*hw 6 оформление наполнения модалки*/
+.js-speaker-form{
+    padding: 40px;
+    width: 448px;
+}
+
+.form-title {
+ width: 448px;
+font-weight: 700;
+font-size: 20px;
+line-height: 1.17;
+text-align: center;
+margin-bottom: 12px;
+}
+
+.input-group{
+display: flex;
+flex-direction: column;
+position: relative;
+}
+
+.name-field{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--secondary-text-color);
+    margin-bottom: 4px;
+}
+
+.input-field{
+    width: 448px;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding-left: 42px;
+
+    transition: border 250ms var(--timng-function);
+}
+
+.input-field:hover,
+.input-field:focus{
+    border: 1px solid var(--accent-color);
+    cursor: pointer;
+}
+.input-field:not(:last-child){
+margin-bottom: 10px;
+}
+
+.icon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    transform: translateY(150%);
+    left: 12px;
+    fill: var(--primary-text-color);
+
+    transition: fill 250ms var(--timng-function);
+}
+.icon:hover,
+.icon:focus {
+    fill: var(--accent-color);
+    cursor: pointer;
+}
+
+.textarea-field{
+    width: 448px;
+    height: 120px;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+/*checkbox*/
+.checkbox-label{
+display: flex;
+margin-left: 12px;
+align-items: center;
+justify-content: center;
+width: 425px;
+margin-bottom: 30px;
+}
+
+.checkbox{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+   }
+
+.icon-check{
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--primary-text-color);
+    border-radius: 2px;
+    fill: var(--primary-background-color);
+}
+
+.checkbox:checked + .icon-check{
+   background-color: var(--accent-color);
+   border-color: var(--accent-color);
+    fill: var(--primary-background-color);
+    background-origin: border-box;
+}
+
+.checkbox-field {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--secondary-text-color); 
+}
+
+.conditions {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: var(--accent-color);
+}
+/* button submin*/
+.submit-button{
+    width: 200px;
+    height: 50px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+    color: var(--primary-background-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border-color: transparent;
+    margin-left: 124px;
+    margin-right: 124px;
+    margin-bottom: 40px;
+
+    transition: background-color 250ms var(--timng-function);
+    }
+
+.submit-button:hover,
+.submit-button:focus{
+    background-color: #188CE8;
+    cursor: pointer;
+}
